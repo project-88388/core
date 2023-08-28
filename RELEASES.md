@@ -39,3 +39,7 @@ There are two further considerations:
 ## Syncing from genesis
 
 The team will be putting together instructions that will be kept up-to-date for syncing without using a backup.
+`
+ go clean -cache -modcache -i -r 
+ make build
+`

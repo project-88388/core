@@ -8,6 +8,7 @@ import (
 func RegisterDenomsConfig() error {
 	// sdk.RegisterDenom(config.Luna, sdk.OneDec())
 	// sdk.RegisterDenom(config.MilliLuna, sdk.NewDecWithPrec(1, 3))
+	sdk.RegisterDenom(config.MicroUSDDenom,sdk.NewDecWithPrec(1,6))
 	err := sdk.RegisterDenom(config.MicroLuna, sdk.NewDecWithPrec(1, 6))
 	if err != nil {
 		return err

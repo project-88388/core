@@ -6,10 +6,10 @@ const (
 
 	// AppName is the application name
 	AppName = "terra"
-
+    
 	// CoinType is the LUNA coin type as defined in SLIP44 (https://github.com/satoshilabs/slips/blob/master/slip-0044.md)
 	CoinType = 330
-
+	MicroUSDDenom  = "uusd"
 	// BondDenom staking denom
 	BondDenom = "uluna"
 
