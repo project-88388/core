@@ -116,23 +116,23 @@ build: go.sum
 ifeq ($(OS),Windows_NT)
 	exit 1
 else
-	go build -mod=readonly $(BUILD_FLAGS) -o build/terrad ./cmd/terrad
+	go build -mod=readonly $(BUILD_FLAGS) -o build/elizabethd ./cmd/elizabethd
 endif
 
 build/linux/amd64:
-	GOOS=linux GOARCH=amd64 go build -mod=readonly $(BUILD_FLAGS) -o "$@/terrad" ./cmd/terrad
+	GOOS=linux GOARCH=amd64 go build -mod=readonly $(BUILD_FLAGS) -o "$@/elizabethd" ./cmd/elizabethd
 
 build/linux/arm64:
-	GOOS=linux GOARCH=arm64 go build -mod=readonly $(BUILD_FLAGS) -o "$@/terrad" ./cmd/terrad
+	GOOS=linux GOARCH=arm64 go build -mod=readonly $(BUILD_FLAGS) -o "$@/elizabethd" ./cmd/elizabethd
 
 build/darwin/amd64:
-	GOOS=darwin GOARCH=amd64 go build -mod=readonly $(BUILD_FLAGS) -o "$@/terrad" ./cmd/terrad
+	GOOS=darwin GOARCH=amd64 go build -mod=readonly $(BUILD_FLAGS) -o "$@/elizabethd" ./cmd/elizabethd
 
 build/darwin/arm64:
-	GOOS=darwin GOARCH=arm64 go build -mod=readonly $(BUILD_FLAGS) -o "$@/terrad" ./cmd/terrad
+	GOOS=darwin GOARCH=arm64 go build -mod=readonly $(BUILD_FLAGS) -o "$@/elizabethd" ./cmd/elizabethd
 
 build/windows/amd64:
-	GOOS=windows GOARCH=amd64 go build -mod=readonly $(BUILD_FLAGS) -o "$@/terrad" ./cmd/terrad
+	GOOS=windows GOARCH=amd64 go build -mod=readonly $(BUILD_FLAGS) -o "$@/elizabethd" ./cmd/elizabethd
 
 build-release: build/linux/amd64 build/linux/arm64 build/darwin/amd64 build/darwin/arm64 build/windows/amd64
 
@@ -192,7 +192,7 @@ build-release-arm64: go.sum $(BUILDDIR)/
 	$(DOCKER) rm -f core-builder
 
 install: go.sum 
-	go install -mod=readonly $(BUILD_FLAGS) ./cmd/terrad
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/elizabethd
 
 gen-swagger-docs:
 	bash scripts/protoc-swagger-gen.sh
